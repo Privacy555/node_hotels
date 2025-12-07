@@ -4,6 +4,11 @@ const app=express();
 //importing db(mongoose one) for connection with server
 const db=require('./7db')
 
+
+//for dot env
+require('dotenv').config();
+
+
 //importing Person.js
 const Person=require('./7models.js/person')
 
@@ -97,6 +102,9 @@ app.get('/',(req,res)=>{
     res.send("Welcome to my hotel. how can i help you? We have list of menus.");
 })
 
-app.listen(3000,()=>{
+
+const PORT=process.env.PORT || 3000                         //if there is no port in env file ,then use 3000
+
+app.listen(PORT,()=>{
     console.log("Server started on port 3000")
 })

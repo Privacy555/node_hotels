@@ -5,6 +5,11 @@ const app=express();
 const db=require('./7db')
 
 
+//for dot env
+require('dotenv').config();
+
+const PORT=process.env.PORT || 3000                     //if there is no PORT in env file then use 3000
+
 //importing bodyParser
 const bodyParser=require('body-parser');
 app.use(bodyParser.json());                                             //stores in req.body        ,       since we are using for json file,so we have include .json()
@@ -29,6 +34,8 @@ app.get('/',(req,res)=>{
     res.send("Welcome to my hotel. how can i help you? We have list of menus.");
 })
 
-app.listen(3000,()=>{
+
+
+app.listen(PORT,()=>{
     console.log("Server started on port 3000")
 })
