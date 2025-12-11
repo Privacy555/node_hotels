@@ -35,7 +35,7 @@ app.use(bodyParser.json());                                             //stores
 
 // pathway for personRoutes
 const personRoutes=require('./routes/personRoutes');
-app.use('/person',authenticateMiddleware,personRoutes);                                        //we use person here cuz person was common in each path of  get ,post apks
+app.use('/person',personRoutes);                                        //we use person here cuz person was common in each path of  get ,post apks
 
 
 //pathway for menuRoutes
